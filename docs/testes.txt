@@ -1,0 +1,158 @@
+---------------------------
+Falta fazer:
+- Colocar o multichat a funcionar
+- Colocar os handlers a experirar no tempo e ele a fazer refresh
+
+
+
+------------------------------------
+Bateria de testes:
+
+Registar
+
+//Dados incompletos
+register 
+register dario
+register dario 12345
+
+//Válido
+register dario 12345 nascimento
+
+//Repetido
+register dario 54321 fernando
+
+//Registar com mesmo username e nome
+register dario 12345 dario
+
+//Registar com multiplos nomes
+register dario 12345 fernando rodrigues nascimento
+
+
+
+//********************* LOGIN ******************************
+login
+login dario
+//User inválido
+login andre 12345
+//Password errrada
+login dario 65442
+//Correcto
+login dario 12345
+//Errado porque já está logado
+login dario 12345
+
+
+//login em 2 terminais distintos
+Indica utilizador já loggado
+
+
+//Recebe os pedidos de amizade pendentes
+register dario 12345 nascimento
+register artur 12345 balanuta
+login dario 12345
+
+
+
+//Recebe pedidos de amizade pendentes depois de aceites
+//Os pedidos aceites pendentes, passam a ser aceites ao fazer login
+
+
+
+----------------->Recebe as mensagens pendentes?
+
+
+
+//Notificar os outros utilizadores de que estamos online
+//Notificar os outros utilizadores de que estamos offline
+//********************* Enviar pedido de amizade ******************************
+//sem estar logado
+invite_friend artur
+
+//sem existir o amigo
+invite_friend tadeu
+
+//com amigo offline
+invite_friend artur
+
+
+//com amigo online
+//logout e login depois do pedido
+//convidar alguém que já é nosso amigo
+
+
+//********************* Aceitar pedido de amizade******************************
+//De username nao existente ou que não nos pediu em amizade
+//amigo aceita amizade quando estamos ligados
+//amigo aceita amizade quando estamos desligados
+// Quando o amigo aceita-nos e nós estamos offline, os estados estao correctos
+
+
+
+/************************** Mudanca de password **********************
+//utilizador nao existente
+//password inicial errada
+//mudou bem
+
+
+/************************** Procura de amigos **********************
+//nome nao existe
+//usando o username e nao partname
+//interseccao
+register dario 12345 dario fernando rodrigues nascimento
+register vanessa 12345 vanessa sofia rodrigues nascimento
+
+search_friends dario fernando
+search_friends vanessa sofia
+search_friends rodrigues
+search_friends rodrigues nascimento
+search_friends fernando sofia
+
+
+
+
+
+/************************** Listagens de amigos **********************
+//Estamos ligados e amigo entra/sai
+//Estamos ligados, amigo entra, nos saimos, amigo sai e nós entramos
+
+
+
+
+
+//************************ Chat 1 para 1  ******************************
+//nao amigo
+//amigo online
+//amigo offline
+
+
+//************************ Chat Room ******************************
+//Sao independentes, pode haver chats com o mesmo nome mas sao independentes
+//nao permitir convidar nao amigos
+
+
+------------> Pode ser convidado para um chat onde já está e fica entrada duplicada
+------------> Não há mensagens trocadas
+
+
+//*********************** LOGOUT **************************************
+---------------> Sai dos chats rooms?
+
+
+//*********************** EXIT ****************************************
+------------> Sai dos chat rooms?
+-----------> terminar todas as threads?
+
+
+
+//************************ GOSSIP/Admin ******************************
+//Mensagens em espera para entrega, correcto.
+//users registados
+//instancias a correr
+//msg rate está certo mas é dificil de testar
+
+
+---> Nº de pessoas no chat room não está feito
+
+
+
+
